@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ExcelDataReader" Version="3.8.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.8.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="10.0.1" />
+    <PackageReference Include="UI.for.WinForms.AllControls.NetCore" Version="2022.3.913" />
+  </ItemGroup>
+</Project>

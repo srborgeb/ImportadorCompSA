@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ImportadorCompSA</id>
+    <version>1.0.0</version>
+    <authors>ImportadorCompSA</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net8.0-windows7.0">
+        <dependency id="UI.for.WinForms.AllControls.NetCore" version="2022.3.913" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="D:\Desarrollo\ImportadorCompSA\ImportadorCompSA\bin\Debug\net8.0-windows\ImportadorCompSA.runtimeconfig.json" target="lib\net8.0-windows7.0\ImportadorCompSA.runtimeconfig.json" />
+    <file src="D:\Desarrollo\ImportadorCompSA\ImportadorCompSA\bin\Debug\net8.0-windows\ImportadorCompSA.dll" target="lib\net8.0-windows7.0\ImportadorCompSA.dll" />
+  </files>
+</package>

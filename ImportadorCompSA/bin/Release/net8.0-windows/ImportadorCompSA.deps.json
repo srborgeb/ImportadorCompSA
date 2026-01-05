@@ -1,0 +1,660 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ImportadorCompSA/1.0.0": {
+        "dependencies": {
+          "ExcelDataReader": "3.8.0",
+          "ExcelDataReader.DataSet": "3.8.0",
+          "System.Configuration.ConfigurationManager": "10.0.1",
+          "System.Data.SqlClient": "4.9.0",
+          "System.Text.Encoding.CodePages": "10.0.1",
+          "UI.for.WinForms.AllControls.NetCore": "2022.3.913"
+        },
+        "runtime": {
+          "ImportadorCompSA.dll": {}
+        }
+      },
+      "ExcelDataReader/3.8.0": {
+        "runtime": {
+          "lib/net8.0/ExcelDataReader.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "ExcelDataReader.DataSet/3.8.0": {
+        "dependencies": {
+          "ExcelDataReader": "3.8.0"
+        },
+        "runtime": {
+          "lib/net8.0/ExcelDataReader.DataSet.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.1.0": {},
+      "Microsoft.Toolkit.Uwp.Notifications/7.0.0": {
+        "dependencies": {
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Toolkit.Uwp.Notifications.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.1"
+          }
+        }
+      },
+      "Microsoft.Win32.Registry/4.7.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "4.7.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "runtime.native.System.Data.SqlClient.sni/4.4.0": {
+        "dependencies": {
+          "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
+          "runtime.win-x64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
+          "runtime.win-x86.runtime.native.System.Data.SqlClient.sni": "4.4.0"
+        }
+      },
+      "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/sni.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "4.6.25512.1"
+          }
+        }
+      },
+      "runtime.win-x64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/sni.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "4.6.25512.1"
+          }
+        }
+      },
+      "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+        "runtimeTargets": {
+          "runtimes/win-x86/native/sni.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "4.6.25512.1"
+          }
+        }
+      },
+      "System.CodeDom/4.7.0": {},
+      "System.ComponentModel.Composition/4.7.0": {
+        "runtime": {
+          "lib/netcoreapp2.0/System.ComponentModel.Composition.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "System.Configuration.ConfigurationManager/10.0.1": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "10.0.1",
+          "System.Security.Cryptography.ProtectedData": "10.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "System.Data.SqlClient/4.9.0": {
+        "dependencies": {
+          "runtime.native.System.Data.SqlClient.sni": "4.4.0"
+        },
+        "runtime": {
+          "lib/net8.0/System.Data.SqlClient.dll": {
+            "assemblyVersion": "4.6.1.6",
+            "fileVersion": "4.900.24.56208"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/net8.0/System.Data.SqlClient.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "4.6.1.6",
+            "fileVersion": "4.900.24.56208"
+          },
+          "runtimes/win/lib/net8.0/System.Data.SqlClient.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.6.1.6",
+            "fileVersion": "4.900.24.56208"
+          }
+        }
+      },
+      "System.Diagnostics.EventLog/10.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "System.Management/4.7.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "Microsoft.Win32.Registry": "4.7.0",
+          "System.CodeDom": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Management.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Management.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "System.Reflection.Emit/4.7.0": {},
+      "System.Security.AccessControl/4.7.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/10.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "System.Security.Principal.Windows/4.7.0": {},
+      "System.Text.Encoding.CodePages/10.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Text.Encoding.CodePages.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Text.Encoding.CodePages.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "System.ValueTuple/4.5.0": {},
+      "UI.for.WinForms.AllControls.NetCore/2022.3.913": {
+        "dependencies": {
+          "Microsoft.Toolkit.Uwp.Notifications": "7.0.0",
+          "System.ComponentModel.Composition": "4.7.0",
+          "System.Management": "4.7.0",
+          "System.Reflection.Emit": "4.7.0",
+          "Unofficial.Microsoft.mshtml.NetStandard": "7.0.3300"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MediaFoundation.dll": {
+            "assemblyVersion": "3.1.0.32450",
+            "fileVersion": "3.1.0.0"
+          },
+          "lib/netcoreapp3.1/RadControlSpy.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Documents.SpreadsheetStreaming.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.ChartView.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.GridView.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.PdfViewer.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.PivotGrid.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.RadDiagram.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.RadDock.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.RadMap.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.RadMarkupEditor.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.RadSpreadsheet.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.RadToastNotification.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.RadWebCam.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.RichTextEditor.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Scheduler.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.SpellChecker.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.SyntaxEditor.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Aqua.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Breeze.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Crystal.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.CrystalDark.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Desert.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Fluent.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.FluentDark.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.HighContrastBlack.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Material.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.MaterialBlueGrey.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.MaterialPink.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.MaterialTeal.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Office2007Black.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Office2007Silver.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Office2010Black.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Office2010Blue.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Office2010Silver.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Office2013Dark.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Office2013Light.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Office2019.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.TelerikMetro.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.TelerikMetroBlue.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.TelerikMetroTouch.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.VisualStudio2012Dark.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.VisualStudio2012Light.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.VisualStudio2022.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Windows7.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.Themes.Windows8.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.UI.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.WinControls.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.CMapUtils.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.Core.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.DrawingML.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.Fixed.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.Flow.FormatProviders.Doc.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.Flow.FormatProviders.Pdf.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.Flow.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.Spreadsheet.FormatProviders.Xls.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Documents.Spreadsheet.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.MediaFoundation.dll": {
+            "assemblyVersion": "2022.3.908.310",
+            "fileVersion": "2022.3.908.310"
+          },
+          "lib/netcoreapp3.1/Telerik.Windows.Zip.dll": {
+            "assemblyVersion": "2022.3.906.310",
+            "fileVersion": "2022.3.906.310"
+          },
+          "lib/netcoreapp3.1/TelerikCommon.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/TelerikData.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          },
+          "lib/netcoreapp3.1/TelerikExport.dll": {
+            "assemblyVersion": "2022.3.913.310",
+            "fileVersion": "2022.3.913.310"
+          }
+        }
+      },
+      "Unofficial.Microsoft.mshtml.NetStandard/7.0.3300": {
+        "runtime": {
+          "lib/netstandard1.0/Microsoft.mshtml.dll": {
+            "assemblyVersion": "7.0.3300.0",
+            "fileVersion": "7.0.3300.1"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ImportadorCompSA/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ExcelDataReader/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kbUsldc5Fn9IKgzL2nr4VvN/mKqPqn8zGXUZpA7uL6svCA4psF+qMK519EhMvderpU4pAJoqk9DWpiSIkiZtXA==",
+      "path": "exceldatareader/3.8.0",
+      "hashPath": "exceldatareader.3.8.0.nupkg.sha512"
+    },
+    "ExcelDataReader.DataSet/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+eQg5oinHir7ayE/rF4dedvy8J6FBDG8RDyKFQsS/VZG9ygrnNgW6U8JSlrfGfe3DxYgbVoVwYV9Hbk63JQJFQ==",
+      "path": "exceldatareader.dataset/3.8.0",
+      "hashPath": "exceldatareader.dataset.3.8.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Toolkit.Uwp.Notifications/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w3dZxNfOxcwRwe+rOKZ+l9NihbrUbPvwRFk8FIXkiM2aLFhOX3DFjgdZ1hchyzQvYl9k2heY6xX5A83Br8mp8A==",
+      "path": "microsoft.toolkit.uwp.notifications/7.0.0",
+      "hashPath": "microsoft.toolkit.uwp.notifications.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.Registry/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
+      "path": "microsoft.win32.registry/4.7.0",
+      "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
+    },
+    "runtime.native.System.Data.SqlClient.sni/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A8v6PGmk+UGbfWo5Ixup0lPM4swuSwOiayJExZwKIOjTlFFQIsu3QnDXECosBEyrWSPryxBVrdqtJyhK3BaupQ==",
+      "path": "runtime.native.system.data.sqlclient.sni/4.4.0",
+      "hashPath": "runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LbrynESTp3bm5O/+jGL8v0Qg5SJlTV08lpIpFesXjF6uGNMWqFnUQbYBJwZTeua6E/Y7FIM1C54Ey1btLWupdg==",
+      "path": "runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0",
+      "hashPath": "runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "runtime.win-x64.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-38ugOfkYJqJoX9g6EYRlZB5U2ZJH51UP8ptxZgdpS07FgOEToV+lS11ouNK2PM12Pr6X/PpT5jK82G3DwH/SxQ==",
+      "path": "runtime.win-x64.runtime.native.system.data.sqlclient.sni/4.4.0",
+      "hashPath": "runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "runtime.win-x86.runtime.native.System.Data.SqlClient.sni/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
+      "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
+      "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "System.CodeDom/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Hs9pw/kmvH3lXaZ1LFKj3pLQsiGfj2xo3sxSzwiLlRL6UcMZUTeCfoJ9Udalvn3yq5dLlPEZzYegrTQ1/LhPOQ==",
+      "path": "system.codedom/4.7.0",
+      "hashPath": "system.codedom.4.7.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Composition/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TKOHGbuqp7++lEna7+p19kTR8rKeAeoo2Faab2n2q7spV2CWPevmUkghMG6POKfSdeQhtAJoNZ33FT+01CNe3g==",
+      "path": "system.componentmodel.composition/4.7.0",
+      "hashPath": "system.componentmodel.composition.4.7.0.nupkg.sha512"
+    },
+    "System.Configuration.ConfigurationManager/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HfOAIlSA8OuaxBZD6xjsUWhtB0KdKSWEfRId8gSGveLUjuP6G8IxfiFgJNxaiRIEC1kx4pSvz3Em5xW/J6LLxA==",
+      "path": "system.configuration.configurationmanager/10.0.1",
+      "hashPath": "system.configuration.configurationmanager.10.0.1.nupkg.sha512"
+    },
+    "System.Data.SqlClient/4.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j4KJO+vC62NyUtNHz854njEqXbT8OmAa5jb1nrGfYWBOcggyYUQE0w/snXeaCjdvkSKWuUD+hfvlbN8pTrJTXg==",
+      "path": "system.data.sqlclient/4.9.0",
+      "hashPath": "system.data.sqlclient.4.9.0.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xfaHEHVDkMOOZR5S6ZGezD0+vekdH1Nx/9Ih8/rOqOGSOk1fxiN3u94bYkBW/wigj0Uw2Wt3vvRj9mtYdgwEjw==",
+      "path": "system.diagnostics.eventlog/10.0.1",
+      "hashPath": "system.diagnostics.eventlog.10.0.1.nupkg.sha512"
+    },
+    "System.Management/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IY+uuGhgzWiCg21i8IvQeY/Z7m1tX8VuPF+ludfn7iTCaccTtJo5HkjZbBEL8kbBubKhAKKtNXr7uMtmAc28Pw==",
+      "path": "system.management/4.7.0",
+      "hashPath": "system.management.4.7.0.nupkg.sha512"
+    },
+    "System.Reflection.Emit/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VR4kk8XLKebQ4MZuKuIni/7oh+QGFmZW3qORd1GvBq/8026OpW501SzT/oypwiQl4TvT8ErnReh/NzY9u+C6wQ==",
+      "path": "system.reflection.emit/4.7.0",
+      "hashPath": "system.reflection.emit.4.7.0.nupkg.sha512"
+    },
+    "System.Security.AccessControl/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
+      "path": "system.security.accesscontrol/4.7.0",
+      "hashPath": "system.security.accesscontrol.4.7.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9SqHNq+lAjZeyPcm69FTQEjr+wsRYvkS3aW8yxoEndVYwDRkCrsP/44QPqpWHwzevoX26rkOoQ6kr7GZWngw2A==",
+      "path": "system.security.cryptography.protecteddata/10.0.1",
+      "hashPath": "system.security.cryptography.protecteddata.10.0.1.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
+      "path": "system.security.principal.windows/4.7.0",
+      "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "System.Text.Encoding.CodePages/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lsaz3vFh4sl7k1UAwZkyDLPFvZRyVPBniqFne98LwUesNkTJta1XXGri25vRho0TxesYBBNHTv06IqpHkzK6Aw==",
+      "path": "system.text.encoding.codepages/10.0.1",
+      "hashPath": "system.text.encoding.codepages.10.0.1.nupkg.sha512"
+    },
+    "System.ValueTuple/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
+    "UI.for.WinForms.AllControls.NetCore/2022.3.913": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uZ+vuZ8ADRyuzsdxgXNHUHdBcpRne1U0MOXBCUmTYU6UQZjPPwiqOXryGfo32moBiil5iyxJ65y1K/LOF8vRfA==",
+      "path": "ui.for.winforms.allcontrols.netcore/2022.3.913",
+      "hashPath": "ui.for.winforms.allcontrols.netcore.2022.3.913.nupkg.sha512"
+    },
+    "Unofficial.Microsoft.mshtml.NetStandard/7.0.3300": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mc6/+cXEA5a9yI//XOVaOgpmawV2Gbqg+dp1GZU7MlQEtUMfj4+8WKFVgUFvmn1xDTklcddsL/xlJvVDMV819g==",
+      "path": "unofficial.microsoft.mshtml.netstandard/7.0.3300",
+      "hashPath": "unofficial.microsoft.mshtml.netstandard.7.0.3300.nupkg.sha512"
+    }
+  }
+}
