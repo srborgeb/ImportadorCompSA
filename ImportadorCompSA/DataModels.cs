@@ -8,6 +8,7 @@ namespace ImportadorCompras
     {
         // Datos para agrupación y Header
         public string CodProv { get; set; }
+        public string NombreProveedor { get; set; }
         public DateTime FechaEmision { get; set; } // Obtenida columna A (aunque mapeada a Descrip2, necesitamos fecha real)
         public string Referencia { get; set; } // Columna B (Referencia)
 

@@ -119,6 +119,16 @@ namespace ImportadorCompras
             if (radGridView1.Columns.Contains("Descrip2"))
                 radGridView1.Columns["Descrip2"].HeaderText = "Descripción Sec.";
 
+            if (radGridView1.Columns.Contains("Descrip4"))
+            {
+                radGridView1.Columns["Descrip4"].HeaderText = "Tasa";
+                radGridView1.Columns["Descrip4"].FormatString = "{0:C2}"; // Formato Moneda
+                radGridView1.Columns["Descrip4"].TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            }
+
+            if (radGridView1.Columns.Contains("Descrip6"))
+                radGridView1.Columns["Descrip6"].HeaderText = "Banco.";
+
             if (radGridView1.Columns.Contains("CodItem"))
                 radGridView1.Columns["CodItem"].HeaderText = "Cód. Artículo";
 
@@ -131,6 +141,9 @@ namespace ImportadorCompras
 
             // Ocultar columnas internas que no interesa ver (Opcional)
             if (radGridView1.Columns.Contains("NroLinea")) radGridView1.Columns["NroLinea"].IsVisible = false;
+            if (radGridView1.Columns.Contains("Descrip2")) radGridView1.Columns["Descrip2"].IsVisible = false;
+            if (radGridView1.Columns.Contains("Descrip3")) radGridView1.Columns["Descrip3"].IsVisible = false;
+            if (radGridView1.Columns.Contains("Descrip5")) radGridView1.Columns["Descrip5"].IsVisible = false;
 
             // Reajustar anchos para que el texto nuevo quepa bien
             radGridView1.BestFitColumns();
@@ -141,14 +154,14 @@ namespace ImportadorCompras
         {
             if (_datosCargados == null || _datosCargados.Count == 0) return;
 
-            if (RadMessageBox.Show("¿Está seguro de insertar estos registros en SQL Server?\nSe generarán facturas agrupadas por Proveedor.", "Confirmación", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            if (RadMessageBox.Show("¿Está seguro de insertar estos registros?\nSe generarán facturas agrupadas por Proveedor.", "Confirmación", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
                     this.Cursor = Cursors.WaitCursor;
                     _dbManager.GuardarFacturas(_datosCargados);
 
-                    RadMessageBox.Show("Proceso completado exitosamente.\nVerifique el LOG para detalles.", "Finalizado", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    RadMessageBox.Show("Proceso completado exitosamente.", "Finalizado", MessageBoxButtons.OK, RadMessageIcon.Info);
 
                     // Limpiar UI
                     radGridView1.DataSource = null;

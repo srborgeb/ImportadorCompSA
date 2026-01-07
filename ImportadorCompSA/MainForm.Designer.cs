@@ -64,14 +64,14 @@
             // 
             radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             radGridView1.Name = "radGridView1";
-            radGridView1.Size = new Size(1033, 237);
+            radGridView1.Size = new Size(1280, 0);
             radGridView1.TabIndex = 3;
             // 
             // btnProcesar
             // 
             btnProcesar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnProcesar.Enabled = false;
-            btnProcesar.Location = new Point(883, 313);
+            btnProcesar.Location = new Point(1130, -37);
             btnProcesar.Name = "btnProcesar";
             btnProcesar.Size = new Size(160, 30);
             btnProcesar.TabIndex = 4;
@@ -83,7 +83,7 @@
             AutoScaleBaseSize = new Size(7, 15);
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1057, 350);
+            ClientSize = new Size(1304, 0);
             Controls.Add(btnProcesar);
             Controls.Add(radGridView1);
             Controls.Add(btnBuscar);
@@ -91,6 +91,7 @@
             Controls.Add(radLabel1);
             Name = "MainForm";
             Text = "Importador de Compras Telerik";
+            WindowState = FormWindowState.Maximized;
             Load += MainForm_Load;
             ((System.ComponentModel.ISupportInitialize)radLabel1).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtRuta).EndInit();

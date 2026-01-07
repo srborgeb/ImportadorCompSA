@@ -2,12 +2,16 @@
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using System.Reflection; // Necesario para obtener la versión
 
 namespace ImportadorCompras
 {
     public static class Logger
     {
         private static readonly string LogDirectory = Path.Combine(Application.StartupPath, "LOG");
+
+        // Capturamos la versión una sola vez al iniciar la clase para no usar reflexión en cada escritura
+        private static readonly string AppVersion = Assembly.GetEntryAssembly()?.GetName().Version?.ToString() ?? "0.0.0.0";
 
         public static void Write(string message, string type = "INFO")
         {
@@ -20,7 +24,9 @@ namespace ImportadorCompras
 
                 string fileName = DateTime.Now.ToString("yyyy-MM-dd") + ".txt";
                 string filePath = Path.Combine(LogDirectory, fileName);
-                string logLine = $"{DateTime.Now:HH:mm:ss} | {type} | {message}";
+
+                // Formato solicitado: Hora | TIPO | Version | Mensaje
+                string logLine = $"{DateTime.Now:HH:mm:ss} | {type} | {AppVersion} | {message}";
 
                 // Usamos append para no sobrescribir
                 using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.UTF8))

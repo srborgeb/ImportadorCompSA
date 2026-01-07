@@ -6,6 +6,9 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+	<Deterministic>false</Deterministic>
+	<AssemblyVersion>1.0.*</AssemblyVersion>
+	<FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ExcelDataReader" Version="3.8.0" />

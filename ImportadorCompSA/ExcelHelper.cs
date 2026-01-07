@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using Telerik.Windows.Documents.Spreadsheet.Expressions.Functions;
 
 namespace ImportadorCompras
 {
@@ -60,7 +61,7 @@ namespace ImportadorCompras
                                 // A=0, B=1, C=2, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=11, M=12, N=13
 
                                 // H - CodProv (Columna 2 en encabezado erroneo, pero es Proveedor)
-                                item.CodProv = row[7]?.ToString();
+                                item.CodProv = row[8]?.ToString();
                                 if (string.IsNullOrWhiteSpace(item.CodProv)) continue; // Sin proveedor no se procesa
 
                                 // A - Fecha y Descrip2
@@ -86,25 +87,25 @@ namespace ImportadorCompras
                                 item.Descrip5 = row[3]?.ToString(); // Mapeo fila 9
 
                                 // I - CodItem (Columna COD/SER)
-                                item.CodItem = row[8]?.ToString(); // Mapeo fila 9
+                                item.CodItem = row[9]?.ToString(); // Mapeo fila 9
 
                                 // L - Monto (Monto en $) - Ojo: Indices pueden variar si hay columnas ocultas
                                 // Asumiendo L es la columna 11 o 12. En el CSV snippet "MONTO" parece ser índice 12 si contamos comas vacías
                                 // Ajuste dinámico: Buscamos columna numérica relevante cerca del final
                                 decimal monto = 0;
                                 // Intento leer columna 12 (Monto según snippet fila 9)
-                                if (row.ItemArray.Length > 12 && row[12] != DBNull.Value)
+                                if (row.ItemArray.Length > 12 && row[13] != DBNull.Value)
                                 {
-                                    decimal.TryParse(row[12].ToString(), out monto);
+                                    decimal.TryParse(row[13].ToString(), out monto);
                                 }
-                                item.Monto = monto;
+                                item.Monto = monto*(-1);
 
                                 // Columnas adicionales segun fila 9
                                 // DESCRIP4 (índice 11 según conteo visual del CSV raw)
-                                if (row.ItemArray.Length > 11) item.Descrip4 = row[11]?.ToString();
+                                if (row.ItemArray.Length > 11) item.Descrip4 = row[12]?.ToString();
 
                                 // DESCRIP6 (índice 13)
-                                if (row.ItemArray.Length > 13) item.Descrip6 = row[13]?.ToString();
+                                if (row.ItemArray.Length > 13) item.Descrip6 = row[14]?.ToString();
 
                                 lista.Add(item);
                             }

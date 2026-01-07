@@ -58,7 +58,7 @@ namespace ImportadorCompras
 
         public void GuardarFacturas(List<CompraImportada> datos)
         {
-            Logger.Write("Iniciando proceso de transacción SQL (Réplica lógica Delphi)...");
+            Logger.Write("Iniciando proceso de transacción SQL...");
 
             // 1. Agrupamos por Proveedor para crear una cabecera por cada uno
             var facturasPorProveedor = datos.GroupBy(x => x.CodProv);
@@ -109,9 +109,7 @@ namespace ImportadorCompras
                         {
                             transaction.Rollback();
                             Logger.LogException(ex, $"Error guardando factura {proveedor}");
-                            // Relanzamos para detener o notificar a la UI si es necesario, 
-                            // o continuamos con el siguiente proveedor (decisión de negocio).
-                            // Aquí lanzamos para avisar al usuario.
+                   
                             throw;
                         }
                     }
@@ -122,9 +120,9 @@ namespace ImportadorCompras
         /// <summary>
         /// Réplica de la inserción en SACOMP (Encabezado de Compra)
         /// </summary>
-        private void InsertarEncabezado(SqlTransaction trans, string numeroD, string codProv, decimal total, DateTime fechaE, string numeroP)
+        private void InsertarEncabezado(SqlTransaction trans, string numeroD, string codProv, decimal total, DateTime fechaE, string numeroP                                   )
         {
-            // Mapeo basado en análisis Delphi:
+            
             // TipoCom: 'H'
             // Signo: 1
             // Status: '0'
@@ -147,7 +145,7 @@ namespace ImportadorCompras
                     MtoPagos, MtoNCredito, MtoNDebito, Descto1, MtoInt1, Descto2, MtoInt2, MtoFinanc,
                     DetalChq, TotalPrd, TotalSrv, OrdenC, CodOper, NGiros, NMeses,
                     Notas1, Notas2, Notas3, Notas4, Notas5, Notas6, Notas7, Notas8, Notas9, Notas10,
-                    NroEstable, PtoEmision, AutSRI, TipoSus, TGravable0, FromTran, CodTarj, Status
+                    NroEstable, PtoEmision, AutSRI, TipoSus, TGravable0, FromTran, CodTarj
                 ) VALUES (
                     @CodSucu, @TipoCom, @NumeroD, @CodProv, '',
                     '', 'SISTEMA', 1, @FechaE, '', '',
@@ -162,7 +160,7 @@ namespace ImportadorCompras
                     0, 0, 0, 0, 0, 0, 0, 0,
                     '', 0, @Total, '', '', 0, 0,
                     '', '', '', '', '', '', '', '', '', '',
-                    '', '', '', 0, 0, 0, '', '0'
+                    '', '', '', 0, 0, 0, ''
                 )";
 
             using (SqlCommand cmd = new SqlCommand(query, trans.Connection, trans))
@@ -194,7 +192,7 @@ namespace ImportadorCompras
             string query = @"
                 INSERT INTO SAITEMCOM (
                     CodSucu, TipoCom, NumeroD, CodProv, 
-                    NroLinea, NroLineaC, Status,
+                    NroLinea, NroLineaC, 
                     CodItem, CodUbic, 
                     Descrip1, Descrip2, Descrip3, Descrip4, Descrip5, Descrip6, Descrip7, Descrip8, Descrip9, Descrip10,
                     Refere, Signo, Tara, 
@@ -207,9 +205,9 @@ namespace ImportadorCompras
                     PrecioI1, PrecioIU1, PrecioI2, PrecioIU2, PrecioI3, PrecioIU3, CostoI
                 ) VALUES (
                     @CodSucu, @TipoCom, @NumeroD, @CodProv,
-                    @NroLinea, @NroLinea, '0',
+                    @NroLinea, @NroLinea, 
                     @CodItem, '', 
-                    @Descrip1, @Descrip2, @Descrip3, '', '', '', '', '', '', '',
+                    @Descrip1, @Descrip2, @Descrip3, @Descrip4, @Descrip5, @Descrip6, '', '', '', '',
                     '', 1, 0,
                     1, 0, 0, 0, 0, 1, 0, 0, -- Cantidad = 1
                     @Precio, @TotalItem, 
@@ -235,6 +233,9 @@ namespace ImportadorCompras
                 cmd.Parameters.AddWithValue("@Descrip1", Truncate(item.Descrip1, 40));
                 cmd.Parameters.AddWithValue("@Descrip2", Truncate(item.Descrip2, 40));
                 cmd.Parameters.AddWithValue("@Descrip3", Truncate(item.Descrip3, 40));
+                cmd.Parameters.AddWithValue("@Descrip4", Truncate(item.Descrip4, 40));
+                cmd.Parameters.AddWithValue("@Descrip5", Truncate(item.Descrip5, 40));
+                cmd.Parameters.AddWithValue("@Descrip6", Truncate(item.Descrip6, 40));
 
                 cmd.Parameters.AddWithValue("@Precio", item.Monto);
                 cmd.Parameters.AddWithValue("@TotalItem", item.Monto); // 1 * Monto

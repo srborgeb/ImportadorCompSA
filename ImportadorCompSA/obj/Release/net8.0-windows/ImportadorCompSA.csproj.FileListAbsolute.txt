@@ -101,3 +101,4 @@ D:\Desarrollo\ImportadorCompSA\ImportadorCompSA\obj\Release\net8.0-windows\refin
 D:\Desarrollo\ImportadorCompSA\ImportadorCompSA\obj\Release\net8.0-windows\ImportadorCompSA.pdb
 D:\Desarrollo\ImportadorCompSA\ImportadorCompSA\obj\Release\net8.0-windows\ImportadorCompSA.genruntimeconfig.cache
 D:\Desarrollo\ImportadorCompSA\ImportadorCompSA\obj\Release\net8.0-windows\ref\ImportadorCompSA.dll
+D:\Desarrollo\ImportadorCompSA\ImportadorCompSA\obj\Release\net8.0-windows\ImportadorCompSA.sourcelink.json
