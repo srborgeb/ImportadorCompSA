@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImportadorCompSA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40522f7696068820a33ab7f90b5f78163bfb6553")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fafab00f1c982dbf61d8526323c1283c0523f721")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImportadorCompSA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImportadorCompSA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.*")]

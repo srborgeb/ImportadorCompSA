@@ -23,7 +23,7 @@ namespace ImportadorCompras
 
         /// <summary>
         /// Obtiene y avanza el correlativo de forma atómica replicando la lógica de SACORRELSIS.
-        /// Equivalente a la rutina de "Próximo Número" en Delphi.
+        /// Equivalente a la rutina de "Próximo Número".
         /// </summary>
         private int GetNextCorrelative(SqlTransaction transaction, string fieldName = "PrxFact")
         {
@@ -56,6 +56,32 @@ namespace ImportadorCompras
             }
         }
 
+        /// <summary>
+        /// Obtiene el nombre del proveedor basado en el codigo de CodProv facilitado en el archivo segun la tabla SAPROV
+        /// </summary>
+        private string ObtenerProveedor(SqlTransaction transaction, string Codigo)
+        {
+            string sql = @"
+                            SELECT Descrip 
+                            FROM dbo.SAPROV
+                            WHERE CodProv = @CodProv";
+
+            using (SqlCommand cmd = new SqlCommand(sql, transaction.Connection, transaction))
+            {
+                cmd.Parameters.AddWithValue("@CodProv", Codigo);
+                
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    return result.ToString();
+                }
+                else
+                {
+                    throw new Exception($"No se pudo obtener el nombre de proveedor para el codigo '{Codigo}'. Verifique el codigo o el registro es SAPROV.");
+                }
+            }
+        }
+
         public void GuardarFacturas(List<CompraImportada> datos)
         {
             Logger.Write("Iniciando proceso de transacción SQL...");
@@ -80,6 +106,7 @@ namespace ImportadorCompras
                             // A. Obtener Próximo Número (Correlativo)
                             int proximoNumero = GetNextCorrelative(transaction, "PrxFact");
                             string numeroDocumento = proximoNumero.ToString().PadLeft(10, '0'); // Relleno con ceros según estándar Saint
+                            string nombreProveedor = ObtenerProveedor(transaction, proveedor);
 
                             Logger.Write($"Procesando Proveedor: {proveedor}. Generando Documento: {numeroDocumento}");
 
@@ -92,7 +119,7 @@ namespace ImportadorCompras
                             string referencia = grupo.First().Referencia ?? "S/R";
 
                             // C. Insertar Encabezado (SACOMP)
-                            InsertarEncabezado(transaction, numeroDocumento, proveedor, totalMonto, fechaEmision, referencia);
+                            InsertarEncabezado(transaction, numeroDocumento, proveedor, totalMonto, fechaEmision, referencia, nombreProveedor);
 
                             // D. Insertar Detalles (SAITEMCOM)
                             int nroLinea = 1;
@@ -120,7 +147,7 @@ namespace ImportadorCompras
         /// <summary>
         /// Réplica de la inserción en SACOMP (Encabezado de Compra)
         /// </summary>
-        private void InsertarEncabezado(SqlTransaction trans, string numeroD, string codProv, decimal total, DateTime fechaE, string numeroP                                   )
+        private void InsertarEncabezado(SqlTransaction trans, string numeroD, string codProv, decimal total, DateTime fechaE, string numeroP, string nombreProv                                   )
         {
             
             // TipoCom: 'H'
@@ -151,7 +178,7 @@ namespace ImportadorCompras
                     '', 'SISTEMA', 1, @FechaE, '', '',
                     @NumeroP, '', '', '', '',
                     0, '', 0, 0, '',
-                    'Importación de Compras Excel', '', '', '', '', '',
+                    @Descrip, '', '', '', '', '',
                     @Total, 0, 0, 0, 
                     @Total, 0, 0, 0, -- Asumimos todo a TGravable por defecto o TExento según config (Ajustado a Total base)
                     GETDATE(), GETDATE(), @FechaE, @FechaE,
@@ -170,6 +197,7 @@ namespace ImportadorCompras
                 cmd.Parameters.AddWithValue("@NumeroD", numeroD);
                 cmd.Parameters.AddWithValue("@CodProv", codProv);
                 cmd.Parameters.AddWithValue("@NumeroP", numeroP); // Referencia del Excel
+                cmd.Parameters.AddWithValue("@Descrip", Truncate(nombreProv, 100));
                 cmd.Parameters.AddWithValue("@FechaE", fechaE);
                 cmd.Parameters.AddWithValue("@Total", total);
 
