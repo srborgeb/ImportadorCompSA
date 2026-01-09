@@ -11,6 +11,7 @@ namespace ImportadorCompras
         public string NombreProveedor { get; set; }
         public DateTime FechaEmision { get; set; } // Obtenida columna A (aunque mapeada a Descrip2, necesitamos fecha real)
         public string Referencia { get; set; } // Columna B (Referencia)
+        public string Notas10 { get; set; } // Col J (Notas10)
 
         // Datos para Detalles (SAITEMCOM) según mapeo fila 9
         public string Descrip1 { get; set; } // Col C
@@ -19,6 +20,7 @@ namespace ImportadorCompras
         public string Descrip4 { get; set; } // Col K (aprox, indice 11)
         public string Descrip5 { get; set; } // Col D
         public string Descrip6 { get; set; } // Col M (aprox, indice 13)
+        public string CodUbic { get; set; } // Col I
 
         public string CodItem { get; set; }  // Col I
         public decimal Monto { get; set; }   // Col L (Monto) - Usado para Precio y Total

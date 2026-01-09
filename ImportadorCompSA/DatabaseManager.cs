@@ -119,7 +119,7 @@ namespace ImportadorCompras
                             string referencia = grupo.First().Referencia ?? "S/R";
 
                             // C. Insertar Encabezado (SACOMP)
-                            InsertarEncabezado(transaction, numeroDocumento, proveedor, totalMonto, fechaEmision, referencia, nombreProveedor);
+                            InsertarEncabezado(transaction, numeroDocumento, proveedor, totalMonto, fechaEmision, referencia, nombreProveedor, grupo.First().Notas10, grupo.First().CodUbic);
 
                             // D. Insertar Detalles (SAITEMCOM)
                             int nroLinea = 1;
@@ -147,7 +147,8 @@ namespace ImportadorCompras
         /// <summary>
         /// Réplica de la inserción en SACOMP (Encabezado de Compra)
         /// </summary>
-        private void InsertarEncabezado(SqlTransaction trans, string numeroD, string codProv, decimal total, DateTime fechaE, string numeroP, string nombreProv                                   )
+        private void InsertarEncabezado(SqlTransaction trans, string numeroD, string codProv, decimal total, DateTime fechaE, 
+                                        string numeroP, string nombreProv, string Notas10, string codUbicacion)
         {
             
             // TipoCom: 'H'
@@ -177,7 +178,7 @@ namespace ImportadorCompras
                     @CodSucu, @TipoCom, @NumeroD, @CodProv, '',
                     '', 'SISTEMA', 1, @FechaE, '', '',
                     @NumeroP, '', '', '', '',
-                    0, '', 0, 0, '',
+                    0, '', 0, 0, @Codubicacion,
                     @Descrip, '', '', '', '', '',
                     @Total, 0, 0, 0, 
                     @Total, 0, 0, 0, -- Asumimos todo a TGravable por defecto o TExento según config (Ajustado a Total base)
@@ -186,7 +187,7 @@ namespace ImportadorCompras
                     @Total, 0, @Total, @Total, -- Credito = Total, SaldoAct = Total
                     0, 0, 0, 0, 0, 0, 0, 0,
                     '', 0, @Total, '', '', 0, 0,
-                    '', '', '', '', '', '', '', '', '', '',
+                    '', '', '', '', '', '', '', '', '', @Notas10,
                     '', '', '', 0, 0, 0, ''
                 )";
 
@@ -200,6 +201,8 @@ namespace ImportadorCompras
                 cmd.Parameters.AddWithValue("@Descrip", Truncate(nombreProv, 100));
                 cmd.Parameters.AddWithValue("@FechaE", fechaE);
                 cmd.Parameters.AddWithValue("@Total", total);
+                cmd.Parameters.AddWithValue("@Notas10", Truncate(Notas10, 100));
+                cmd.Parameters.AddWithValue("@Codubicacion", Truncate(codUbicacion, 100));
 
                 cmd.ExecuteNonQuery();
             }
@@ -234,7 +237,7 @@ namespace ImportadorCompras
                 ) VALUES (
                     @CodSucu, @TipoCom, @NumeroD, @CodProv,
                     @NroLinea, @NroLinea, 
-                    @CodItem, '', 
+                    @CodItem, @CodUbic, 
                     @Descrip1, @Descrip2, @Descrip3, @Descrip4, @Descrip5, @Descrip6, '', '', '', '',
                     '', 1, 0,
                     1, 0, 0, 0, 0, 1, 0, 0, -- Cantidad = 1
@@ -264,6 +267,7 @@ namespace ImportadorCompras
                 cmd.Parameters.AddWithValue("@Descrip4", Truncate(item.Descrip4, 40));
                 cmd.Parameters.AddWithValue("@Descrip5", Truncate(item.Descrip5, 40));
                 cmd.Parameters.AddWithValue("@Descrip6", Truncate(item.Descrip6, 40));
+                cmd.Parameters.AddWithValue("@CodUbic", Truncate(item.CodUbic, 20));
 
                 cmd.Parameters.AddWithValue("@Precio", item.Monto);
                 cmd.Parameters.AddWithValue("@TotalItem", item.Monto); // 1 * Monto

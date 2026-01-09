@@ -22,9 +22,7 @@ namespace ImportadorCompras
             ConfigurarGrid();
         }
 
-        // --- SOLUCIÓN AL ERROR CS0103 ---
-        // Este método es requerido porque el archivo de diseño (Designer.cs) 
-        // tiene un evento "Load" vinculado. Lo agregamos para que compile correctamente.
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Se deja vacío intencionalmente ya que la configuración inicial 
