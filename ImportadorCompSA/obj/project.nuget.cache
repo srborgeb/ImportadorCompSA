@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4mr8sTALD08=",
+  "dgSpecHash": "a3XLebWjA0I=",
   "success": true,
   "projectFilePath": "D:\\Desarrollo\\Codigos\\C#\\ImportadorCompSA\\ImportadorCompSA\\ImportadorCompSA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\srbor\\.nuget\\packages\\exceldatareader\\3.8.0\\exceldatareader.3.8.0.nupkg.sha512",
     "C:\\Users\\srbor\\.nuget\\packages\\exceldatareader.dataset\\3.8.0\\exceldatareader.dataset.3.8.0.nupkg.sha512",
+    "C:\\Users\\srbor\\.nuget\\packages\\fontawesome.sharp\\6.6.0\\fontawesome.sharp.6.6.0.nupkg.sha512",
     "C:\\Users\\srbor\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\srbor\\.nuget\\packages\\microsoft.toolkit.uwp.notifications\\7.0.0\\microsoft.toolkit.uwp.notifications.7.0.0.nupkg.sha512",
     "C:\\Users\\srbor\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

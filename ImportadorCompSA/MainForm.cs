@@ -1,9 +1,11 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
+using System.Drawing; // Importante: Asegura que Bitmap, Color e Icon sean reconocidos
 using System.Windows.Forms;
 using Telerik.WinControls;
-using Telerik.WinControls.UI;
 using Telerik.WinControls.Data;
+using Telerik.WinControls.UI;
 
 namespace ImportadorCompras
 {
@@ -20,8 +22,10 @@ namespace ImportadorCompras
             _dbManager = new DatabaseManager();
 
             ConfigurarGrid();
-        }
 
+            // Cargamos los iconos visuales
+            CargarIconos();
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -42,6 +46,78 @@ namespace ImportadorCompras
             GroupDescriptor descriptor = new GroupDescriptor();
             descriptor.GroupNames.Add("CodProv", System.ComponentModel.ListSortDirection.Ascending);
             this.radGridView1.GroupDescriptors.Add(descriptor);
+        }
+
+        private void CargarIconos()
+        {
+            try
+            {
+                // USAMOS IconPictureBox PARA GENERAR LAS IMÁGENES DE FORMA SEGURA
+
+                // 1. Icono del Formulario (Ventana Principal)
+                using (var ipbForm = new IconPictureBox())
+                {
+                    ipbForm.IconChar = IconChar.FileImport;
+                    // CAMBIO: Color azul brillante (DeepSkyBlue) para resaltar en barra de tareas negra
+                    ipbForm.IconColor = Color.DeepSkyBlue;
+                    ipbForm.IconSize = 32;
+
+                    // Forzamos la creación de la imagen accediendo a la propiedad
+                    var img = ipbForm.Image;
+
+                    // Convertimos explícitamente a Bitmap
+                    if (img is Bitmap bmp)
+                    {
+                        // PASO CLAVE: Obtenemos el puntero (IntPtr/nint) separadamente
+                        IntPtr hIcon = bmp.GetHicon();
+
+                        // Creamos el icono desde el puntero usando el tipo explícito System.Drawing.Icon
+                        this.Icon = System.Drawing.Icon.FromHandle(hIcon);
+                    }
+                }
+
+                // 2. Icono para el botón Buscar
+                using (var ipbBuscar = new IconPictureBox())
+                {
+                    ipbBuscar.IconChar = IconChar.FolderOpen;
+                    // CAMBIO: Azul acero (SteelBlue) para mejor visibilidad y estilo
+                    ipbBuscar.IconColor = Color.SteelBlue;
+                    ipbBuscar.IconSize = 16;
+
+                    // Clonamos la imagen para asignarla al botón
+                    if (ipbBuscar.Image != null)
+                    {
+                        btnBuscar.Image = (Image)ipbBuscar.Image.Clone();
+                    }
+                }
+
+                btnBuscar.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnBuscar.TextAlignment = ContentAlignment.MiddleCenter;
+                btnBuscar.DisplayStyle = DisplayStyle.ImageAndText;
+
+                // 3. Icono para el botón Procesar
+                using (var ipbProcesar = new IconPictureBox())
+                {
+                    ipbProcesar.IconChar = IconChar.Database;
+                    // CAMBIO: Verde más brillante (MediumSeaGreen) para que no se vea negro
+                    ipbProcesar.IconColor = Color.MediumSeaGreen;
+                    ipbProcesar.IconSize = 24;
+
+                    if (ipbProcesar.Image != null)
+                    {
+                        btnProcesar.Image = (Image)ipbProcesar.Image.Clone();
+                    }
+                }
+
+                btnProcesar.TextImageRelation = TextImageRelation.ImageBeforeText;
+                btnProcesar.TextAlignment = ContentAlignment.MiddleCenter;
+                btnProcesar.DisplayStyle = DisplayStyle.ImageAndText;
+            }
+            catch (Exception ex)
+            {
+                // Si falla la carga de iconos por alguna razón, no detenemos la app.
+                try { Logger.Write($"No se pudieron cargar los iconos visuales: {ex.Message}", "WARN"); } catch { }
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -152,14 +228,14 @@ namespace ImportadorCompras
         {
             if (_datosCargados == null || _datosCargados.Count == 0) return;
 
-            if (RadMessageBox.Show("¿Está seguro de insertar estos registros?\nSe generarán facturas agrupadas por Proveedor.", "Confirmación", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            if (RadMessageBox.Show("¿Está seguro de insertar estos registros en SQL Server?\nSe generarán facturas agrupadas por Proveedor.", "Confirmación", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
                     this.Cursor = Cursors.WaitCursor;
                     _dbManager.GuardarFacturas(_datosCargados);
 
-                    RadMessageBox.Show("Proceso completado exitosamente.", "Finalizado", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    RadMessageBox.Show("Proceso completado exitosamente.\nVerifique el LOG para detalles.", "Finalizado", MessageBoxButtons.OK, RadMessageIcon.Info);
 
                     // Limpiar UI
                     radGridView1.DataSource = null;

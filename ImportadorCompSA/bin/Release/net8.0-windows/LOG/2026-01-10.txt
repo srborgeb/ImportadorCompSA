@@ -1,3 +1,9 @@
 ﻿06:12:10 | INFO | 1.0.9506.11156 | Iniciando lectura de archivo: D:\Desarrollo\Codigos\C#\ImportadorCompSA\Archivos\4 - V2.xlsx
 06:12:11 | INFO | 1.0.9506.11156 | Archivo leído. Total filas detectadas: 8717
 06:12:11 | INFO | 1.0.9506.11156 | Lectura finalizada. Registros válidos (con 'D' en col E): 8149
+07:46:44 | INFO | 1.0.9506.13973 | Iniciando lectura de archivo: D:\Desarrollo\Codigos\C#\ImportadorCompSA\Archivos\4 - V2.xlsx
+07:46:45 | INFO | 1.0.9506.13973 | Archivo leído. Total filas detectadas: 8717
+07:46:45 | INFO | 1.0.9506.13973 | Lectura finalizada. Registros válidos (con 'D' en col E): 8149
+07:54:50 | INFO | 1.0.9506.14132 | Iniciando lectura de archivo: D:\Desarrollo\Codigos\C#\ImportadorCompSA\Archivos\4 - V2.xlsx
+07:54:51 | INFO | 1.0.9506.14132 | Archivo leído. Total filas detectadas: 8717
+07:54:51 | INFO | 1.0.9506.14132 | Lectura finalizada. Registros válidos (con 'D' en col E): 8149

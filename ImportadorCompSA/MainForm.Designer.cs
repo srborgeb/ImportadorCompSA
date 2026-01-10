@@ -64,14 +64,14 @@
             // 
             radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             radGridView1.Name = "radGridView1";
-            radGridView1.Size = new Size(1386, 197);
+            radGridView1.Size = new Size(1422, 101);
             radGridView1.TabIndex = 3;
             // 
             // btnProcesar
             // 
             btnProcesar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnProcesar.Enabled = false;
-            btnProcesar.Location = new Point(1238, 255);
+            btnProcesar.Location = new Point(1274, 159);
             btnProcesar.Name = "btnProcesar";
             btnProcesar.Size = new Size(160, 30);
             btnProcesar.TabIndex = 4;
@@ -83,7 +83,7 @@
             AutoScaleBaseSize = new Size(7, 15);
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1412, 292);
+            ClientSize = new Size(1448, 196);
             Controls.Add(radGridView1);
             Controls.Add(btnProcesar);
             Controls.Add(btnBuscar);

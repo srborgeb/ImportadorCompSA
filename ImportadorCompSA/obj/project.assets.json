@@ -31,6 +31,18 @@
           }
         }
       },
+      "FontAwesome.Sharp/6.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -675,6 +687,23 @@
         "lib/netstandard2.1/ExcelDataReader.DataSet.dll",
         "lib/netstandard2.1/ExcelDataReader.DataSet.pdb",
         "lib/netstandard2.1/ExcelDataReader.DataSet.xml"
+      ]
+    },
+    "FontAwesome.Sharp/6.6.0": {
+      "sha512": "bJCb2x73UC1nD9+9iMLaUy6Ujf9Pf+buL6FHwVnaoDYT4CQNLazz59hO5gQ0+SMSW0G+ZXmjjShOYr3Jn2UZiw==",
+      "type": "package",
+      "path": "fontawesome.sharp/6.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome.sharp.6.6.0.nupkg.sha512",
+        "fontawesome.sharp.nuspec",
+        "lib/net472/FontAwesome.Sharp.dll",
+        "lib/net48/FontAwesome.Sharp.dll",
+        "lib/net6.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/net7.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/net8.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
       ]
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
@@ -1469,6 +1498,7 @@
     "net8.0-windows7.0": [
       "ExcelDataReader >= 3.8.0",
       "ExcelDataReader.DataSet >= 3.8.0",
+      "FontAwesome.Sharp >= 6.6.0",
       "System.Configuration.ConfigurationManager >= 10.0.1",
       "System.Data.SqlClient >= 4.9.0",
       "System.Text.Encoding.CodePages >= 10.0.1",
@@ -1535,6 +1565,10 @@
           "ExcelDataReader.DataSet": {
             "target": "Package",
             "version": "[3.8.0, )"
+          },
+          "FontAwesome.Sharp": {
+            "target": "Package",
+            "version": "[6.6.0, )"
           },
           "System.Configuration.ConfigurationManager": {
             "target": "Package",

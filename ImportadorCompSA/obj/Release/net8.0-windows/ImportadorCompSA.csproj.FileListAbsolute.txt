@@ -206,3 +206,4 @@ D:\Desarrollo\Codigos\C#\ImportadorCompSA\ImportadorCompSA\obj\Release\net8.0-wi
 D:\Desarrollo\Codigos\C#\ImportadorCompSA\ImportadorCompSA\obj\Release\net8.0-windows\ImportadorCompSA.pdb
 D:\Desarrollo\Codigos\C#\ImportadorCompSA\ImportadorCompSA\obj\Release\net8.0-windows\ImportadorCompSA.genruntimeconfig.cache
 D:\Desarrollo\Codigos\C#\ImportadorCompSA\ImportadorCompSA\obj\Release\net8.0-windows\ref\ImportadorCompSA.dll
+D:\Desarrollo\Codigos\C#\ImportadorCompSA\ImportadorCompSA\bin\Release\net8.0-windows\FontAwesome.Sharp.dll
