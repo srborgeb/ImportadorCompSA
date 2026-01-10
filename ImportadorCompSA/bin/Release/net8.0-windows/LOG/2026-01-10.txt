@@ -1,0 +1,3 @@
+﻿06:12:10 | INFO | 1.0.9506.11156 | Iniciando lectura de archivo: D:\Desarrollo\Codigos\C#\ImportadorCompSA\Archivos\4 - V2.xlsx
+06:12:11 | INFO | 1.0.9506.11156 | Archivo leído. Total filas detectadas: 8717
+06:12:11 | INFO | 1.0.9506.11156 | Lectura finalizada. Registros válidos (con 'D' en col E): 8149
