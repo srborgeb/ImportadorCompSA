@@ -228,7 +228,7 @@ namespace ImportadorCompras
         {
             if (_datosCargados == null || _datosCargados.Count == 0) return;
 
-            if (RadMessageBox.Show("¿Está seguro de insertar estos registros en SQL Server?\nSe generarán facturas agrupadas por Proveedor.", "Confirmación", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            if (RadMessageBox.Show("¿Está seguro de insertar estos registros?\nSe generarán facturas agrupadas por Proveedor.", "Confirmación", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 try
                 {

@@ -39,7 +39,7 @@ namespace ImportadorCompras
                             DataRow row = table.Rows[i];
 
                             // Verificación básica para saltar filas totalmente vacías
-                            if (row[0] == DBNull.Value && row[7] == DBNull.Value) continue;
+                            if (row[0] == DBNull.Value && row[8] == DBNull.Value) continue;
 
                             // --- NUEVO FILTRO SOLICITADO ---
                             // Validar Columna E (Índice 4). Solo procesar si contiene "D".
@@ -61,7 +61,7 @@ namespace ImportadorCompras
                                 // A=0, B=1, C=2, D=3, E=4, F=5, G=6, H=7, I=8, J=9, K=10, L=11, M=12, N=13
 
                                 // H - CodProv (Columna 2 en encabezado erroneo, pero es Proveedor)
-                                item.CodProv = row[10]?.ToString();
+                                item.CodProv = row[11]?.ToString();
                                 if (string.IsNullOrWhiteSpace(item.CodProv)) continue; // Sin proveedor no se procesa
 
                                 // A - Fecha y Descrip2
@@ -87,31 +87,31 @@ namespace ImportadorCompras
                                 item.Descrip5 = row[3]?.ToString(); // Mapeo fila 9
 
                                 // I - CodItem (Columna COD/SER)
-                                item.CodItem = row[11]?.ToString(); // Mapeo fila 9
+                                item.CodItem = row[12]?.ToString(); // Mapeo fila 9
 
                                 // I - CodUbic
-                                item.CodUbic = row[8]?.ToString(); // Mapeo fila 9
+                                item.CodUbic = row[9]?.ToString(); // Mapeo fila 9
 
                                 // J - Notas10
-                                item.Notas10 = row[9]?.ToString(); // Col J - Notas10
+                                item.Notas10 = row[10]?.ToString(); // Col J - Notas10
 
                                 // L - Monto (Monto en $) - Ojo: Indices pueden variar si hay columnas ocultas
                                 // Asumiendo L es la columna 14 o 15. En el CSV snippet "MONTO" parece ser índice 15 si contamos comas vacías
                                 // Ajuste dinámico: Buscamos columna numérica relevante cerca del final
                                 decimal monto = 0;
                                 // Intento leer columna 15 (Monto según snippet fila 9)
-                                if (row.ItemArray.Length > 12 && row[15] != DBNull.Value)
+                                if (row.ItemArray.Length > 12 && row[16] != DBNull.Value)
                                 {
-                                    decimal.TryParse(row[15].ToString(), out monto);
+                                    decimal.TryParse(row[16].ToString(), out monto);
                                 }
                                 item.Monto = monto*(-1);
 
                                 // Columnas adicionales segun fila 9
                                 // DESCRIP4 (índice 14 según conteo visual del CSV raw)
-                                if (row.ItemArray.Length > 11) item.Descrip4 = row[14]?.ToString();
+                                if (row.ItemArray.Length > 11) item.Descrip4 = row[15]?.ToString();
 
                                 // DESCRIP6 (índice 15)
-                                if (row.ItemArray.Length > 13) item.Descrip6 = row[16]?.ToString();
+                                if (row.ItemArray.Length > 13) item.Descrip6 = row[17]?.ToString();
 
                                 lista.Add(item);
                             }
