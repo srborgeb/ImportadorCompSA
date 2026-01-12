@@ -9,7 +9,7 @@ namespace ImportadorCompras
 {
     public class ExcelHelper
     {
-        public List<CompraImportada> LeerArchivoExcel(string filePath)
+        public List<CompraImportada> LeerArchivoExcel(string filePath, DateTime FechaE)
         {
             var lista = new List<CompraImportada>();
 
@@ -65,15 +65,18 @@ namespace ImportadorCompras
                                 if (string.IsNullOrWhiteSpace(item.CodProv)) continue; // Sin proveedor no se procesa
 
                                 // A - Fecha y Descrip2
-                                var rawDate = row[0];
-                                if (rawDate != null && DateTime.TryParse(rawDate.ToString(), out DateTime fecha))
-                                {
-                                    item.FechaEmision = fecha;
-                                }
-                                else
-                                {
-                                    item.FechaEmision = DateTime.Now; // Fallback si no parsea
-                                }
+                                //var rawDate = row[0];
+                                //if (rawDate != null && DateTime.TryParse(rawDate.ToString(), out DateTime fecha))
+                                //{
+                                //item.FechaEmision =     fecha;
+                                //}
+                                //else
+                                //{
+                                //item.FechaEmision = DateTime.Now; // Fallback si no parsea
+                                //}
+
+                                item.FechaEmision = FechaE;
+
                                 item.Descrip2 = row[0]?.ToString(); // Mapeo fila 9
 
                                 // B - Referencia y Descrip3

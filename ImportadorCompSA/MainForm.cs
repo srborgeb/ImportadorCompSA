@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing; // Importante: Asegura que Bitmap, Color e Icon sean reconocidos
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
@@ -20,6 +21,7 @@ namespace ImportadorCompras
             InitializeComponent();
             _excelHelper = new ExcelHelper();
             _dbManager = new DatabaseManager();
+            dtpFechaE.Value = DateTime.Now;
 
             ConfigurarGrid();
 
@@ -138,7 +140,7 @@ namespace ImportadorCompras
             try
             {
                 this.Cursor = Cursors.WaitCursor;
-                _datosCargados = _excelHelper.LeerArchivoExcel(path);
+                _datosCargados = _excelHelper.LeerArchivoExcel(path, dtpFechaE.Value);
 
                 if (_datosCargados.Count > 0)
                 {
