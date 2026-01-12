@@ -84,7 +84,7 @@ namespace ImportadorCompras
                     ipbBuscar.IconChar = IconChar.FolderOpen;
                     // CAMBIO: Azul acero (SteelBlue) para mejor visibilidad y estilo
                     ipbBuscar.IconColor = Color.SteelBlue;
-                    ipbBuscar.IconSize = 16;
+                    ipbBuscar.IconSize = 24;
 
                     // Clonamos la imagen para asignarla al botón
                     if (ipbBuscar.Image != null)
@@ -103,7 +103,7 @@ namespace ImportadorCompras
                     ipbProcesar.IconChar = IconChar.Database;
                     // CAMBIO: Verde más brillante (MediumSeaGreen) para que no se vea negro
                     ipbProcesar.IconColor = Color.MediumSeaGreen;
-                    ipbProcesar.IconSize = 24;
+                    ipbProcesar.IconSize = 30;
 
                     if (ipbProcesar.Image != null)
                     {

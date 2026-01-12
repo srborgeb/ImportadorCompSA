@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|d:\\desarrollo\\importadorcompsa\\importadorcompsa\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|d:\\desarrollo\\importadorcompsa\\importadorcompsa\\datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|solutionrelative:datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|d:\\desarrollo\\importadorcompsa\\importadorcompsa\\excelhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|solutionrelative:excelhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|d:\\desarrollo\\importadorcompsa\\importadorcompsa\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|d:\\desarrollo\\importadorcompsa\\importadorcompsa\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|solutionrelative:databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|d:\\desarrollo\\importadorcompsa\\importadorcompsa\\datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|solutionrelative:datamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4EB6982-4F29-4E82-A56B-BCCDE9B585DA}|ImportadorCompSA.csproj|d:\\desarrollo\\importadorcompsa\\importadorcompsa\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,19 +42,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "DataModels.cs",
               "DocumentMoniker": "D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\DataModels.cs",
               "RelativeDocumentMoniker": "DataModels.cs",
               "ToolTip": "D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\DataModels.cs",
               "RelativeToolTip": "DataModels.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAxwBUAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAswAsAAAB8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T20:00:39.525Z"
+              "WhenOpened": "2026-01-06T20:00:39.525Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -70,15 +71,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainForm.cs [Dise\u00F1o]",
+              "DocumentIndex": 3,
+              "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\MainForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "MainForm.cs [Dise\u00F1o]",
+              "ToolTip": "D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\MainForm.cs [Design]",
+              "RelativeToolTip": "MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-18T18:45:52.367Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -88,20 +89,20 @@
               "RelativeDocumentMoniker": "ExcelHelper.cs",
               "ToolTip": "D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\ExcelHelper.cs",
               "RelativeToolTip": "ExcelHelper.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwBEAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-18T18:39:19.881Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
               "ToolTip": "D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\MainForm.cs",
               "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAApwHUAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAApwGkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-10T11:45:22.556Z",
               "EditorCaption": ""
@@ -120,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DatabaseManager.cs",
               "DocumentMoniker": "D:\\Desarrollo\\ImportadorCompSA\\ImportadorCompSA\\DatabaseManager.cs",
               "RelativeDocumentMoniker": "DatabaseManager.cs",
