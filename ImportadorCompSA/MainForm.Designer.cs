@@ -68,14 +68,14 @@
             // 
             radGridView1.MasterTemplate.ViewDefinition = tableViewDefinition1;
             radGridView1.Name = "radGridView1";
-            radGridView1.Size = new Size(1053, 235);
+            radGridView1.Size = new Size(1071, 187);
             radGridView1.TabIndex = 3;
             // 
             // btnProcesar
             // 
             btnProcesar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnProcesar.Enabled = false;
-            btnProcesar.Location = new Point(905, 293);
+            btnProcesar.Location = new Point(923, 245);
             btnProcesar.Name = "btnProcesar";
             btnProcesar.Size = new Size(160, 30);
             btnProcesar.TabIndex = 4;
@@ -87,7 +87,7 @@
             dtpFechaE.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             dtpFechaE.AutoSize = false;
             dtpFechaE.Format = DateTimePickerFormat.Short;
-            dtpFechaE.Location = new Point(936, 24);
+            dtpFechaE.Location = new Point(954, 24);
             dtpFechaE.Name = "dtpFechaE";
             dtpFechaE.Size = new Size(129, 20);
             dtpFechaE.TabIndex = 5;
@@ -98,7 +98,7 @@
             // radLabel2
             // 
             radLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            radLabel2.Location = new Point(893, 25);
+            radLabel2.Location = new Point(911, 25);
             radLabel2.Name = "radLabel2";
             radLabel2.Size = new Size(37, 18);
             radLabel2.TabIndex = 1;
@@ -109,7 +109,7 @@
             AutoScaleBaseSize = new Size(7, 15);
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1079, 330);
+            ClientSize = new Size(1097, 282);
             Controls.Add(radLabel2);
             Controls.Add(dtpFechaE);
             Controls.Add(radGridView1);

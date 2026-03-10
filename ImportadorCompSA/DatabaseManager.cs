@@ -77,6 +77,7 @@ namespace ImportadorCompras
                 }
                 else
                 {
+                    MessageBox.Show($"No se pudo obtener el nombre de proveedor para el codigo '{Codigo}'. Verifique el codigo o el registro en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw new Exception($"No se pudo obtener el nombre de proveedor para el codigo '{Codigo}'. Verifique el codigo o el registro es SAPROV.");
                 }
             }

@@ -31,10 +31,9 @@ namespace ImportadorCompras
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // Se deja vacío intencionalmente ya que la configuración inicial 
-            // la estamos haciendo en el constructor (ConfigurarGrid).
+
         }
-        // ---------------------------------
+
 
         private void ConfigurarGrid()
         {
