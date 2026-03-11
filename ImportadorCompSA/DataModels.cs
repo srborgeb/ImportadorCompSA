@@ -27,5 +27,6 @@ namespace ImportadorCompras
 
         // Datos auxiliares calculados
         public int NroLinea { get; set; }
+        public string NumeroD { get; set; }
     }
 }

@@ -10,6 +10,7 @@
         "dependencies": {
           "ExcelDataReader": "3.8.0",
           "ExcelDataReader.DataSet": "3.8.0",
+          "FluentValidation": "12.1.1",
           "FontAwesome.Sharp": "6.6.0",
           "System.Configuration.ConfigurationManager": "10.0.1",
           "System.Data.SqlClient": "4.9.0",
@@ -36,6 +37,14 @@
           "lib/net8.0/ExcelDataReader.DataSet.dll": {
             "assemblyVersion": "3.8.0.0",
             "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "FluentValidation/12.1.1": {
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.1.1.0"
           }
         }
       },
@@ -517,6 +526,13 @@
       "sha512": "sha512-+eQg5oinHir7ayE/rF4dedvy8J6FBDG8RDyKFQsS/VZG9ygrnNgW6U8JSlrfGfe3DxYgbVoVwYV9Hbk63JQJFQ==",
       "path": "exceldatareader.dataset/3.8.0",
       "hashPath": "exceldatareader.dataset.3.8.0.nupkg.sha512"
+    },
+    "FluentValidation/12.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EPpkIe1yh1a0OXyC100oOA8WMbZvqUu5plwhvYcb7oSELfyUZzfxV48BLhvs3kKo4NwG7MGLNgy1RJiYtT8Dpw==",
+      "path": "fluentvalidation/12.1.1",
+      "hashPath": "fluentvalidation.12.1.1.nupkg.sha512"
     },
     "FontAwesome.Sharp/6.6.0": {
       "type": "package",

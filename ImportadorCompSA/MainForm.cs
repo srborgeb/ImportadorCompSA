@@ -7,6 +7,9 @@ using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Telerik.WinControls.UI;
+using ImportadorCompSA;
+using ImportadorCompSA.Modelos;
+using ImportadorCompSA.Servicios;
 
 namespace ImportadorCompras
 {
@@ -15,13 +18,13 @@ namespace ImportadorCompras
         private List<CompraImportada> _datosCargados;
         private readonly ExcelHelper _excelHelper;
         private readonly DatabaseManager _dbManager;
+        private DateTime FechaProceso;
 
         public MainForm()
         {
             InitializeComponent();
             _excelHelper = new ExcelHelper();
             _dbManager = new DatabaseManager();
-            dtpFechaE.Value = DateTime.Now;
 
             ConfigurarGrid();
 
@@ -140,7 +143,9 @@ namespace ImportadorCompras
             try
             {
                 this.Cursor = Cursors.WaitCursor;
-                _datosCargados = _excelHelper.LeerArchivoExcel(path, dtpFechaE.Value);
+                // Nota Arquitectónica: Aquí pasamos FechaProceso en su estado original (01/01/0001) para no romper la firma de LeerArchivoExcel.
+                // Lo corregiremos en memoria justo después de la confirmación del usuario.
+                _datosCargados = _excelHelper.LeerArchivoExcel(path, FechaProceso);
 
                 if (_datosCargados.Count > 0)
                 {
@@ -215,14 +220,23 @@ namespace ImportadorCompras
                 radGridView1.Columns["Monto"].TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             }
 
+            if (this.radGridView1.Columns["CodUbic"] != null)
+            {
+                this.radGridView1.Columns["CodUbic"].HeaderText = "Ubicacion";
+                this.radGridView1.Columns["CodUbic"].IsVisible = true;
+                //this.radGridView1.Columns["CodUbic"].Width = 100;
+            }
+
             // Ocultar columnas internas que no interesa ver (Opcional)
             if (radGridView1.Columns.Contains("NroLinea")) radGridView1.Columns["NroLinea"].IsVisible = false;
             if (radGridView1.Columns.Contains("Descrip2")) radGridView1.Columns["Descrip2"].IsVisible = false;
             if (radGridView1.Columns.Contains("Descrip3")) radGridView1.Columns["Descrip3"].IsVisible = false;
             if (radGridView1.Columns.Contains("Descrip5")) radGridView1.Columns["Descrip5"].IsVisible = false;
+            if (radGridView1.Columns.Contains("NumeroD")) radGridView1.Columns["NumeroD"].IsVisible = false;
 
             // Reajustar anchos para que el texto nuevo quepa bien
             radGridView1.BestFitColumns();
+          
         }
         // ---------------------------------------------------------
 
@@ -230,14 +244,57 @@ namespace ImportadorCompras
         {
             if (_datosCargados == null || _datosCargados.Count == 0) return;
 
+            using (frmConfirmarFecha ventanaValidacion = new frmConfirmarFecha())
+            {
+                ventanaValidacion.ShowDialog();
+
+                if (!ventanaValidacion.FechaConfirmada)
+                {
+                    Logger.Write("Importación abortada: El usuario no confirmó la fecha de operación.", "WARN");
+                    RadMessageBox.Show("La fecha no ha sido confirmada. El proceso de importación ha sido abortado por seguridad.",
+                        "Validación Requerida", MessageBoxButtons.OK, RadMessageIcon.Exclamation);
+                    return;
+                }
+                else
+                {
+                    FechaProceso = ventanaValidacion.FechaSeleccionada;
+                    Logger.Write($"Fecha de proceso confirmada por el usuario: {FechaProceso:dd/MM/yyyy}", "INFO");
+
+                    // --- SOLUCIÓN ARQUITECTÓNICA APLICADA AQUÍ ---
+                    // Sincronizamos la fecha confirmada a todos los registros en memoria ANTES de enviarlos a la BD.
+                    // Esto evita la excepción de SqlDateTime overflow (01/01/0001).
+                    foreach (var registro in _datosCargados)
+                    {
+                        registro.FechaEmision = FechaProceso;
+                    }
+                    // ---------------------------------------------
+                }
+            }
+
             if (RadMessageBox.Show("¿Está seguro de insertar estos registros?\nSe generarán facturas agrupadas por Proveedor.", "Confirmación", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
                     this.Cursor = Cursors.WaitCursor;
+
+                    // Asegúrate de que GuardarFacturas actualice la propiedad NumeroD 
+                    // de los objetos dentro de la lista _datosCargados
                     _dbManager.GuardarFacturas(_datosCargados);
 
-                    RadMessageBox.Show("Proceso completado exitosamente.\nVerifique el LOG para detalles.", "Finalizado", MessageBoxButtons.OK, RadMessageIcon.Info);
+                    List<DtoReporteAgrupado> datosParaReporte = new List<DtoReporteAgrupado>();
+                    foreach (var item in _datosCargados)
+                    {
+                        datosParaReporte.Add(new DtoReporteAgrupado
+                        {
+                            Proveedor = item.CodProv,
+                            Documento = item.NumeroD?.ToString() ?? "N/A"
+                        });
+                    }
+
+                    // Llamada al servicio que agrupa, crea el TXT y lo abre
+                    GeneradorReporteTexto.GenerarYAbrirReporte(datosParaReporte);
+
+                    RadMessageBox.Show("Proceso completado exitosamente.", "Finalizado", MessageBoxButtons.OK, RadMessageIcon.Info);
 
                     // Limpiar UI
                     radGridView1.DataSource = null;

@@ -93,7 +93,7 @@ namespace ImportadorCompras
                                 item.CodItem = row[12]?.ToString(); // Mapeo fila 9
 
                                 // I - CodUbic
-                                item.CodUbic = row[9]?.ToString(); // Mapeo fila 9
+                                item.CodUbic = row[8]?.ToString(); // Mapeo fila 9
 
                                 // J - Notas10
                                 item.Notas10 = row[10]?.ToString(); // Col J - Notas10

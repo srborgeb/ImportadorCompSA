@@ -69,7 +69,7 @@ namespace ImportadorCompras
             using (SqlCommand cmd = new SqlCommand(sql, transaction.Connection, transaction))
             {
                 cmd.Parameters.AddWithValue("@CodProv", Codigo);
-                
+
                 object result = cmd.ExecuteScalar();
                 if (result != null)
                 {
@@ -77,6 +77,7 @@ namespace ImportadorCompras
                 }
                 else
                 {
+                    MessageBox.Show($"No se pudo obtener el nombre de proveedor para el codigo '{Codigo}'. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw new Exception($"No se pudo obtener el nombre de proveedor para el codigo '{Codigo}'. Verifique el codigo o el registro es SAPROV.");
                 }
             }
@@ -125,6 +126,11 @@ namespace ImportadorCompras
                             int nroLinea = 1;
                             foreach (var item in grupo)
                             {
+                                // --- INYECCIÓN CLAVE PARA EL REPORTE TXT ---
+                                // Actualizamos la propiedad del objeto en memoria con el número que generó la base de datos
+                                item.NumeroD = numeroDocumento;
+                                // -------------------------------------------
+
                                 InsertarDetalle(transaction, numeroDocumento, proveedor, item, nroLinea);
                                 nroLinea++;
                             }
@@ -136,7 +142,7 @@ namespace ImportadorCompras
                         {
                             transaction.Rollback();
                             Logger.LogException(ex, $"Error guardando factura {proveedor}");
-                   
+
                             throw;
                         }
                     }
@@ -147,10 +153,10 @@ namespace ImportadorCompras
         /// <summary>
         /// Réplica de la inserción en SACOMP (Encabezado de Compra)
         /// </summary>
-        private void InsertarEncabezado(SqlTransaction trans, string numeroD, string codProv, decimal total, DateTime fechaE, 
+        private void InsertarEncabezado(SqlTransaction trans, string numeroD, string codProv, decimal total, DateTime fechaE,
                                         string numeroP, string nombreProv, string Notas10, string codUbicacion)
         {
-            
+
             // TipoCom: 'H'
             // Signo: 1
             // Status: '0'
